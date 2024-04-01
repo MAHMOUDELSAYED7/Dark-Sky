@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/data/api/weather_api.dart';
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -14,9 +12,7 @@ class HomeScreen extends StatelessWidget {
             const Text('Home Screen'),
             ElevatedButton(
               child: const Text("Fetch Weather"),
-              onPressed: () {
-                WeatherWebService.getWeatherData(cityName: "cairo");
-              },
+              onPressed: () {},
             )
           ],
         ),

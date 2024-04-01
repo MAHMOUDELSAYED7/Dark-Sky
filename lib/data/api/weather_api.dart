@@ -10,7 +10,7 @@ class WeatherWebService {
     try {
       Response response = await dio.get(MyApiUrl.baseUrl, queryParameters: {
         'key': MyApiUrl.apikey,
-        'q': "30.05,31.25",
+        'q': cityName,
       });
       log(response.data.toString());
       WeatherModel weatherModel = WeatherModel.fromJson(response.data);
