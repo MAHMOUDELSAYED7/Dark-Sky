@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/widgets/intial_body.dart';
 import 'logic/weather_cubit/weather_cubit.dart';
+import 'view/home.dart';
+import 'widgets/failure_body.dart';
+import 'widgets/loading_body.dart';
+import 'widgets/sucess_body.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const InitialBody(),
+        home: const HomeScreen(),
       ),
     );
   }
