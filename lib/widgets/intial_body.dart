@@ -21,6 +21,7 @@ class InitialBody extends StatelessWidget {
           const Spacer(flex: 2),
           const Text(
             "There is no weather 😔 start Searching now!",
+            textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16),
           ),
           const Spacer(flex: 2),

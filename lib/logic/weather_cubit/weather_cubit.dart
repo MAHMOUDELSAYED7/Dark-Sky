@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:meta/meta.dart';
 
 import '../../data/api/weather_api.dart';
@@ -15,9 +14,12 @@ class WeatherCubit extends Cubit<WeatherState> {
       WeatherModel? weatherModel =
           await WeatherWebService.getWeatherData(cityName: cityName);
       emit(WeatherSuccess(weatherModel: weatherModel));
-    } on DioException catch (err) {
+    } catch (err) {
       emit(WeatherFailure(message: err.toString()));
-      throw Exception(err);
     }
+  }
+
+  void refreshUi() {
+    emit(WeatherInitial());
   }
 }
