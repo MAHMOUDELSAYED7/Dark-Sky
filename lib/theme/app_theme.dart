@@ -4,10 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constant/color.dart';
 
 abstract class AppTheme {
+  //!! LIGHT THEME
   static ThemeData get lightTheme {
     return ThemeData(
       iconTheme:
-          IconThemeData(color: LightModeColor.backgroundColor, size: 20.r),
+          const IconThemeData(color: LightModeColor.backgroundColor),
       fontFamily: 'Poppins',
       useMaterial3: true,
       brightness: Brightness.light,
@@ -70,10 +71,11 @@ abstract class AppTheme {
     );
   }
 
+  //!! DARK THEME
   static ThemeData get darkTheme {
     return ThemeData(
       iconTheme:
-          IconThemeData(color: DarkModeColor.backgroundColor, size: 25.r),
+          const IconThemeData(color: DarkModeColor.backgroundColor),
       fontFamily: 'Poppins',
       useMaterial3: true,
       brightness: Brightness.dark,
