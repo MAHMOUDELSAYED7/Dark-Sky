@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:weather_app/helper/extentions.dart';
 import 'package:weather_app/widgets/custom_search_bar.dart';
 
 class InitialBody extends StatelessWidget {
@@ -8,7 +10,7 @@ class InitialBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15),
+      padding: EdgeInsets.all(15.w),
       child: Column(
         children: [
           const CustomSearchBar(),
@@ -19,11 +21,10 @@ class InitialBody extends StatelessWidget {
             "assets/animations/search.json",
           ),
           const Spacer(flex: 2),
-          const Text(
-            "There is no weather 😔 start Searching now!",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16),
-          ),
+          Text("There is no weather 😔 start Searching now!",
+              textAlign: TextAlign.center,
+              style:
+                  context.textTheme.bodyMedium?.copyWith(color: Colors.black)),
           const Spacer(flex: 2),
         ],
       ),

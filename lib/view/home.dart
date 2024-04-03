@@ -12,23 +12,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appBar = Theme.of(context).appBarTheme;
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
-          centerTitle: true,
-          title: const Text(
-            "Search for Weather 🔍",
-            style: TextStyle(color: Colors.white),
-          ),
-          elevation: 0,
-          backgroundColor: Colors.blue,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20),
-            ),
-          ),
+          centerTitle: appBar.centerTitle,
+          title: const Text("Search for Weather 🔍"),
+          titleTextStyle: appBar.titleTextStyle,
+          elevation: appBar.elevation,
+          backgroundColor: appBar.backgroundColor,
+          shape: appBar.shape,
         ),
         body: BlocBuilder<WeatherCubit, WeatherState>(
           builder: (context, state) {

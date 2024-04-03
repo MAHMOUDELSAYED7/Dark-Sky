@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/constant/color.dart';
+import 'package:weather_app/helper/extentions.dart';
 import 'package:weather_app/logic/weather_cubit/weather_cubit.dart';
 
 class CustomButton extends StatelessWidget {
@@ -10,13 +11,10 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue,
+        backgroundColor: LightModeColor.primaryColor,
       ),
-      onPressed: () => BlocProvider.of<WeatherCubit>(context).refreshUi(),
-      child: Text(
-        title,
-        style: const TextStyle(color: Colors.white, fontSize: 16),
-      ),
+      onPressed: () => context.bloc<WeatherCubit>().refreshUi(),
+      child: Text(title, style: context.textTheme.bodyMedium),
     );
   }
 }

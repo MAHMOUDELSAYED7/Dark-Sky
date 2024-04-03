@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weather_app/constant/color.dart';
+import 'package:weather_app/helper/extentions.dart';
 import '../logic/weather_cubit/weather_cubit.dart';
 
 class CustomSearchBar extends StatefulWidget {
@@ -53,40 +54,37 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   bool _isFocused = false;
   @override
   Widget build(BuildContext context) {
-    cubit = BlocProvider.of<WeatherCubit>(context);
+    cubit = context.bloc<WeatherCubit>();
+    final inputDeco = context.inputDecoration;
     return TextField(
+      style: context.textTheme.bodySmall
+          ?.copyWith(color: LightModeColor.textBlack),
       onSubmitted: onfieldSubmitted,
       onTap: onTapInside,
       onTapOutside: onTapoutside,
       controller: _searchController,
+      maxLength: 32,
       decoration: InputDecoration(
-        suffixIcon: IconButton(
-          onPressed: onSearch,
-          icon: Icon(
-            Icons.search,
-            color: _isFocused ? Colors.blue : null,
-            size: 25,
+        counter: Container(),
+        suffixIcon: Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: IconButton(
+            onPressed: onSearch,
+            icon: Icon(
+              Icons.search,
+              color: _isFocused ? LightModeColor.primaryColor : null,
+              size: 25.r,
+            ),
           ),
         ),
-        filled: true,
-        fillColor: Colors.white,
-        focusedBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20)),
-          borderSide: BorderSide(width: 3, color: Colors.blue),
-        ),
-        enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20)),
-          borderSide: BorderSide(width: 3, color: Colors.blue),
-        ),
+        filled: inputDeco.filled,
+        fillColor: inputDeco.fillColor,
+        focusedBorder: inputDeco.focusedBorder,
+        enabledBorder: inputDeco.enabledBorder,
         hintText: "Enter city name ...",
-        contentPadding:
-            const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        contentPadding: inputDeco.contentPadding,
       ),
-      cursorColor: Colors.blue,
+      cursorColor: LightModeColor.primaryColor,
       keyboardType: TextInputType.name,
     );
   }
