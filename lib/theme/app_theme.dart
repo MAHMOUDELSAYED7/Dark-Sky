@@ -7,8 +7,17 @@ abstract class AppTheme {
   //!! LIGHT THEME
   static ThemeData get lightTheme {
     return ThemeData(
-      iconTheme:
-          const IconThemeData(color: LightModeColor.backgroundColor),
+      iconTheme: const IconThemeData(color: LightModeColor.backgroundColor),
+      switchTheme: SwitchThemeData(
+        trackOutlineColor:
+            MaterialStateProperty.all(LightModeColor.primaryColor),
+        thumbColor: MaterialStateProperty.all(LightModeColor.primaryColor),
+        trackColor: MaterialStateProperty.all(LightModeColor.backgroundColor),
+        thumbIcon: MaterialStateProperty.all(const Icon(
+          Icons.light_mode,
+          color: LightModeColor.backgroundColor,
+        )),
+      ),
       fontFamily: 'Poppins',
       useMaterial3: true,
       brightness: Brightness.light,
@@ -74,8 +83,17 @@ abstract class AppTheme {
   //!! DARK THEME
   static ThemeData get darkTheme {
     return ThemeData(
-      iconTheme:
-          const IconThemeData(color: DarkModeColor.backgroundColor),
+      switchTheme: SwitchThemeData(
+        trackOutlineColor:
+            MaterialStateProperty.all(DarkModeColor.primaryColor),
+        thumbColor: MaterialStateProperty.all(DarkModeColor.primaryColor),
+        trackColor: MaterialStateProperty.all(DarkModeColor.backgroundColor),
+        thumbIcon: MaterialStateProperty.all(const Icon(
+          Icons.dark_mode,
+          color: DarkModeColor.backgroundColor,
+        )),
+      ),
+      iconTheme: const IconThemeData(color: DarkModeColor.backgroundColor),
       fontFamily: 'Poppins',
       useMaterial3: true,
       brightness: Brightness.dark,
