@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:weather_app/constant/color.dart';
 import 'package:weather_app/helper/extentions.dart';
 import 'package:weather_app/widgets/custom_search_bar.dart';
 
@@ -23,8 +24,8 @@ class InitialBody extends StatelessWidget {
           const Spacer(flex: 2),
           Text("There is no weather 😔 start Searching now!",
               textAlign: TextAlign.center,
-              style:
-                  context.textTheme.bodyMedium?.copyWith(color: Colors.black)),
+              style: context.textTheme.bodyMedium
+                  ?.copyWith(color: DarkModeColor.secondaryColor)),
           const Spacer(flex: 2),
         ],
       ),

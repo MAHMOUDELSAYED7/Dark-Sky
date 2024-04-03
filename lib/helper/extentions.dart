@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 //! THEME EXTENSION
 extension ThemeExtensions on BuildContext {
+  ThemeData get theme => Theme.of(this);
+  IconThemeData get iconTheme => Theme.of(this).iconTheme;
   TextTheme get textTheme => Theme.of(this).textTheme;
   AppBarTheme get appBarTheme => Theme.of(this).appBarTheme;
   InputDecorationTheme get inputDecoration =>
@@ -17,6 +19,7 @@ extension MediaQueryExtensions on BuildContext {
 
 //! BLOC EXTENSION
 extension CubitExtension<T extends Cubit<Object>> on BuildContext {
+  // ignore: avoid_shadowing_type_parameters
   T bloc<T extends Cubit<Object>>() {
     try {
       return BlocProvider.of<T>(this);

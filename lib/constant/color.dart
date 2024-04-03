@@ -9,9 +9,9 @@ class LightModeColor {
 }
 
 class DarkModeColor {
-  static const primaryColor = Colors.white;
-  static const secondaryColor = Colors.black;
-  static const backgroundColor = Colors.blueGrey;
+  static const primaryColor = Colors.blue;
+  static const secondaryColor = Colors.grey;
+  static const backgroundColor = Colors.black;
   static const textWhite = Colors.white;
   static const textBlack = Colors.black;
 }

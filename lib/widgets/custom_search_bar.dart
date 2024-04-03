@@ -57,8 +57,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     cubit = context.bloc<WeatherCubit>();
     final inputDeco = context.inputDecoration;
     return TextField(
-      style: context.textTheme.bodySmall
-          ?.copyWith(color: LightModeColor.textBlack),
+      style: context.textTheme.displaySmall,
       onSubmitted: onfieldSubmitted,
       onTap: onTapInside,
       onTapOutside: onTapoutside,
