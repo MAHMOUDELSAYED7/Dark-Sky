@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:weather_app/constant/color.dart';
 import 'package:weather_app/helper/extentions.dart';
 import 'package:weather_app/widgets/custom_button.dart';
 
@@ -20,7 +21,8 @@ class FailureBody extends StatelessWidget {
               const Spacer(),
               Text(
                 message ?? "Something went wrong, try again later!",
-                style: context.textTheme.bodyMedium,
+                style: context.textTheme.bodyMedium
+                    ?.copyWith(color: DarkModeColor.secondaryColor),
               ),
               Center(
                 child: Lottie.asset("assets/animations/falid.json"),

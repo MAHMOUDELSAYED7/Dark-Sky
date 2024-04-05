@@ -31,12 +31,9 @@ extension CubitExtension<T extends Cubit<Object>> on BuildContext {
 
 //! NAVIGATOR EXTENSION
 extension NavigatorExtensions on BuildContext {
-  //? push
   void push(Widget screen) =>
       Navigator.of(this).push(MaterialPageRoute(builder: (context) => screen));
-  //? pushReplacement
   void pushReplacement(Widget screen) => Navigator.of(this)
       .pushReplacement(MaterialPageRoute(builder: (context) => screen));
-  //? pop
-  void goBack() => Navigator.of(this).pop();
+  void pop() => Navigator.of(this).pop();
 }

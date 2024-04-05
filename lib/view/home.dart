@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () => context.push(const SettingsScreen()),
               icon: Icon(Icons.settings, color: context.iconTheme.color)),
           centerTitle: appBar.centerTitle,
-          title: const Text("Search for Weather 🔍"),
+          title: const Text("Search for Weather"),
           titleTextStyle: appBar.titleTextStyle,
           elevation: appBar.elevation,
           backgroundColor: appBar.backgroundColor,

@@ -15,19 +15,21 @@ class SettingsScreen extends StatelessWidget {
       backgroundColor: context.theme.scaffoldBackgroundColor,
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () => context.goBack(),
+            onPressed: () => context.pop(),
             icon: Icon(Icons.arrow_back, color: context.iconTheme.color)),
         title: Text('Settings', style: context.textTheme.bodyLarge),
       ),
       body: Center(
         child: Column(
           children: [
-            const Text('Choose Theme:'),
+            SizedBox(height: 10.h),
             BlocBuilder<ThemeCubit, ThemeState>(
               builder: (context, state) {
                 return Card(
                   margin: EdgeInsets.all(10.w),
-                  color: DarkModeColor.secondaryColor.withOpacity(0.2),
+                  color: state == ThemeState.dark
+                      ? DarkModeColor.secondaryColor.withOpacity(0.2)
+                      : DarkModeColor.secondaryColor.shade200,
                   child: SwitchListTile(
                     title: Text('Dark Mode',
                         style: context.textTheme.displaySmall
@@ -38,6 +40,10 @@ class SettingsScreen extends StatelessWidget {
                 );
               },
             ),
+            const Spacer(),
+            Text('Theme mode',
+                style: context.textTheme.displaySmall?.copyWith(fontSize: 24)),
+            const Spacer(),
           ],
         ),
       ),
