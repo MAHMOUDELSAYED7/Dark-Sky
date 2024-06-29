@@ -27,6 +27,7 @@ Ensure Dark Sky adapts flawlessly across screens with responsive design, offers 
   <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/a0fa98e2-e113-445c-9f40-45e198c4d0ec" alt="Screenshot 3" style="width: 24%;"/>
   <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/915e542b-c723-49fc-b923-0008e9e341fa" alt="Screenshot 3" style="width: 24%;"/>
   <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/f7f9d8ca-09bf-46b7-96a1-43ea8d724eeb" alt="Screenshot 3" style="width: 100%;"/>
+  <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/366a9adf-bc50-482d-8168-d9c171b24062" alt="Screenshot 3" style="width: 100%;"/>
   
  
 </div>
