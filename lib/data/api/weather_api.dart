@@ -6,14 +6,16 @@ import '../model/weather_model.dart';
 
 class WeatherWebService {
   static Dio dio = Dio();
-  static Future<ForecastWeatherModel> getWeatherData({required String cityName}) async {
+  static Future<ForecastWeatherModel> getWeatherData(
+      {required String cityName}) async {
     try {
       Response response = await dio.get(MyApiUrl.baseUrl, queryParameters: {
         'key': MyApiUrl.apikey,
         'q': cityName,
       });
       log(response.data.toString());
-      ForecastWeatherModel weatherModel = ForecastWeatherModel.fromJson(response.data);
+      ForecastWeatherModel weatherModel =
+          ForecastWeatherModel.fromJson(response.data);
       return weatherModel;
     } on DioException catch (err) {
       final errMessage = err.response?.data['error']['message'] ??

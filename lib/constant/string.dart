@@ -1,5 +1,7 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class MyApiUrl {
   // current !!! forecast
-  static String baseUrl = "https://api.weatherapi.com/v1/forecast.json";
-  static String apikey = "e101844155ff41b097c191927232509";
+  static String baseUrl = dotenv.env['weatherBaseUrl']!;
+  static String apikey = dotenv.env['weatherApiKey']!;
 }

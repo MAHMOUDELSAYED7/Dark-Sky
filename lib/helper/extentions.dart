@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,17 +15,16 @@ extension ThemeExtensions on BuildContext {
 
 //! SCREEN EXTENSION
 extension MediaQueryExtensions on BuildContext {
-  double get height => MediaQuery.of(this).size.height;
-  double get width => MediaQuery.of(this).size.width;
+  double get height => MediaQuery.sizeOf(this).height;
+  double get width => MediaQuery.sizeOf(this).width;
 }
-
 //! BLOC EXTENSION
 extension CubitExtension<T extends Cubit<Object>> on BuildContext {
   // ignore: avoid_shadowing_type_parameters
   T bloc<T extends Cubit<Object>>() {
     try {
       return BlocProvider.of<T>(this);
-    } catch (e) {
+    } catch (_) {
       throw Exception('Cannot find bloc of type $T.');
     }
   }

@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weather_app/helper/extentions.dart';
 import 'package:weather_app/logic/theme_cubit/themecubit_cubit.dart';
 import 'helper/cache.dart';
 import 'logic/weather_cubit/weather_cubit.dart';
 import 'theme/app_theme.dart';
 import 'view/splash.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
   await CacheData.cacheDataInit();
   runApp(const MyApp());
 }
@@ -35,6 +38,16 @@ class MyApp extends StatelessWidget {
             child: BlocBuilder<ThemeCubit, ThemeState>(
               builder: (context, state) {
                 return MaterialApp(
+                  builder: (context, widget) {
+                    final mediaQueryData = MediaQuery.of(context);
+                    final scaledMediaQueryData = mediaQueryData.copyWith(
+                      textScaler: TextScaler.noScaling,
+                    );
+                    return MediaQuery(
+                      data: scaledMediaQueryData,
+                      child: widget!,
+                    );
+                  },
                   debugShowCheckedModeBanner: false,
                   title: 'Weather App',
                   home: const SplashScreen(),
@@ -48,3 +61,16 @@ class MyApp extends StatelessWidget {
         });
   }
 }
+
+// TextScaler _WebTextScale(double width) {
+//   if (width >= 600 && width < 800) {
+//     return const TextScaler.linear(0.7);
+//   }
+//   if (width >= 800 && width < 1000) {
+//     return const TextScaler.linear(0.6);
+//   }
+//   if (width >= 1000 && width < 2000) {
+//     return const TextScaler.linear(0.5);
+//   }
+//   return TextScaler.noScaling;
+// }

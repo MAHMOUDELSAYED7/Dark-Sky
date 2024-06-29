@@ -56,35 +56,35 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   Widget build(BuildContext context) {
     cubit = context.bloc<WeatherCubit>();
     final inputDeco = context.inputDecoration;
-    return TextField(
-      style: context.textTheme.displaySmall,
-      onSubmitted: onfieldSubmitted,
-      onTap: onTapInside,
-      onTapOutside: onTapoutside,
-      controller: _searchController,
-      maxLength: 32,
-      decoration: InputDecoration(
-        counter: Container(),
-        suffixIcon: Padding(
-          padding: const EdgeInsets.only(right: 10),
-          child: IconButton(
-            onPressed: onSearch,
-            icon: Icon(
-              Icons.search,
-              color: _isFocused ? LightModeColor.primaryColor : null,
-              size: 25.r,
+    return SizedBox(
+      child: TextField(
+        style: context.textTheme.displaySmall,
+        onSubmitted: onfieldSubmitted,
+        onTap: onTapInside,
+        onTapOutside: onTapoutside,
+        controller: _searchController,
+        decoration: InputDecoration(
+          suffixIcon: Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+              onPressed: onSearch,
+              icon: Icon(
+                Icons.search,
+                color: _isFocused ? LightModeColor.primaryColor : null,
+                size: 25.r,
+              ),
             ),
           ),
+          filled: inputDeco.filled,
+          fillColor: inputDeco.fillColor,
+          focusedBorder: inputDeco.focusedBorder,
+          enabledBorder: inputDeco.enabledBorder,
+          hintText: "Enter city name ...",
+          contentPadding: inputDeco.contentPadding,
         ),
-        filled: inputDeco.filled,
-        fillColor: inputDeco.fillColor,
-        focusedBorder: inputDeco.focusedBorder,
-        enabledBorder: inputDeco.enabledBorder,
-        hintText: "Enter city name ...",
-        contentPadding: inputDeco.contentPadding,
+        cursorColor: LightModeColor.primaryColor,
+        keyboardType: TextInputType.name,
       ),
-      cursorColor: LightModeColor.primaryColor,
-      keyboardType: TextInputType.name,
     );
   }
 }

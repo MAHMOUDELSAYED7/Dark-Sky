@@ -27,8 +27,8 @@ class SuccessBody extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: LightModeColor.primaryColor,
-                borderRadius: BorderRadius.circular(10.dm)),
-            width: double.infinity,
+                borderRadius: BorderRadius.circular(10.r)),
+            width: context.width,
             height: context.height / 2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -75,7 +75,7 @@ class SuccessBody extends StatelessWidget {
                         Text(
                           '${weatherModel!.temp}',
                           style: context.textTheme.bodyLarge!
-                              .copyWith(fontSize: 32.sp),
+                              .copyWith(fontSize: 32.spMin),
                         ),
                         Text(' °C', style: context.textTheme.bodyMedium),
                       ],
@@ -91,7 +91,7 @@ class SuccessBody extends StatelessWidget {
           ),
           const Spacer(),
           const CustomButton(
-            title: "Find More Weather 🔍",
+            title: "Find More Weather",
           ),
           const Spacer(),
         ],

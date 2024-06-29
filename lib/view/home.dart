@@ -14,38 +14,40 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appBar = context.appBarTheme;
     return Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: context.theme.scaffoldBackgroundColor,
-        appBar: AppBar(
-          leading: IconButton(
-              onPressed: () => context.push(const SettingsScreen()),
-              icon: Icon(Icons.settings, color: context.iconTheme.color)),
-          centerTitle: appBar.centerTitle,
-          title: const Text("Search for Weather"),
-          titleTextStyle: appBar.titleTextStyle,
-          elevation: appBar.elevation,
-          backgroundColor: appBar.backgroundColor,
-          shape: appBar.shape,
+      resizeToAvoidBottomInset: false,
+      backgroundColor: context.theme.scaffoldBackgroundColor,
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => context.push(const SettingsScreen()),
+          icon: Icon(Icons.settings, color: context.iconTheme.color),
         ),
-        body: BlocBuilder<WeatherCubit, WeatherState>(
-          builder: (context, state) {
-            if (state is WeatherLoading) {
-              return const LoadingBody();
-            }
-            if (state is WeatherSuccess) {
-              return SuccessBody(
-                weatherModel: state.weatherModel,
-              );
-            }
-            if (state is WeatherFailure) {
-              return FailureBody(
-                message: state.message,
-              );
-            }
-            return const InitialBody();
-          },
-        ));
+        title: const Text("Search for Weather"),
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: SizedBox(
+            height: context.height,
+            width: context.width > 800 ? context.width / 2 : null,
+            child: BlocBuilder<WeatherCubit, WeatherState>(
+              builder: (context, state) {
+                if (state is WeatherLoading) {
+                  return const LoadingBody();
+                } else if (state is WeatherSuccess) {
+                  return SuccessBody(
+                    weatherModel: state.weatherModel,
+                  );
+                } else if (state is WeatherFailure) {
+                  return FailureBody(
+                    message: state.message,
+                  );
+                }
+                return const InitialBody();
+              },
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
