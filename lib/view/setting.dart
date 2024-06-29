@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,6 +22,7 @@ class SettingsScreen extends StatelessWidget {
         title: Text('Settings', style: context.textTheme.bodyLarge),
       ),
       body: SingleChildScrollView(
+        physics: !kIsWeb ? const NeverScrollableScrollPhysics() : null,
         child: Center(
           child: SizedBox(
             height: context.height,

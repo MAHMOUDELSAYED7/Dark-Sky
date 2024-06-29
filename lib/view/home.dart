@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/helper/extentions.dart';
@@ -25,6 +28,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text("Search for Weather"),
       ),
       body: SingleChildScrollView(
+        physics: !kIsWeb ? const NeverScrollableScrollPhysics() : null,
         child: Center(
           child: SizedBox(
             height: context.height,
