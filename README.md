@@ -14,6 +14,9 @@ Eye Comfort: The dark mode reduces eye strain in low-light conditions, making it
 Battery Efficiency: On OLED screens, dark mode can help save battery life by reducing the amount of light emitted by the screen.
 Modern Aesthetics: Dark mode provides a sleek, modern look that enhances the overall user experience.
 
+`3. Responsive Design`
+Ensure Dark Sky adapts flawlessly across screens with responsive design, offers consistent performance on all platforms, and optimizes layout for smartphones and desktops, ensuring a seamless user experience from mobile to web access.
+
 ## Screenshots
 <div style="display: flex; justify-content: space-between;">
   <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/9e993c2f-0c53-4aa1-bd4a-bcdf196fe8d1" alt="Screenshot 1" style="width: 24%;"/>
@@ -23,6 +26,8 @@ Modern Aesthetics: Dark mode provides a sleek, modern look that enhances the ove
   <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/91947cee-69de-4c14-a38f-d6e4527de13b" alt="Screenshot 3" style="width: 24%;"/>
   <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/a0fa98e2-e113-445c-9f40-45e198c4d0ec" alt="Screenshot 3" style="width: 24%;"/>
   <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/915e542b-c723-49fc-b923-0008e9e341fa" alt="Screenshot 3" style="width: 24%;"/>
+  <img src="https://github.com/MAHMOUDELSAYED69/Dark-Sky/assets/133010029/f7f9d8ca-09bf-46b7-96a1-43ea8d724eeb" alt="Screenshot 3" style="width: 100%;"/>
+  
  
 </div>
 
