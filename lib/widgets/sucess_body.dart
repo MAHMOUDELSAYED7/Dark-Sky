@@ -94,13 +94,13 @@ class SuccessBody extends StatelessWidget {
                   children: [
                     Text(weatherModel!.weatherCondition,
                         style: context.textTheme.bodyLarge!
-                            .copyWith(fontSize: 36.spMin),
+                            .copyWith(fontSize: 32.spMin),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis),
                     Image.network(
                       "https:${weatherModel!.image}",
-                      width: 80,
-                      height: 80,
+                      width: 90,
+                      height: 90,
                       fit: BoxFit.fill,
                     )
                   ],
