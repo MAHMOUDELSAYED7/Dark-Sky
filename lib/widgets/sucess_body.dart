@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:weather_app/constant/color.dart';
-import 'package:weather_app/data/model/weather_model.dart';
+import 'package:dark_sky/constant/color.dart';
+import 'package:dark_sky/data/model/weather_model.dart';
 import 'package:intl/intl.dart';
-import 'package:weather_app/helper/extentions.dart';
-import 'package:weather_app/widgets/custom_button.dart';
+import 'package:dark_sky/helper/extentions.dart';
+import 'package:dark_sky/widgets/custom_button.dart';
 
 class SuccessBody extends StatelessWidget {
   const SuccessBody({super.key, this.weatherModel});
@@ -43,11 +43,14 @@ class SuccessBody extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Last Updated:",
                             style: context.textTheme.bodySmall),
+                        SizedBox(height: 3.h),
                         Text(formattedDateTime,
                             style: context.textTheme.bodySmall),
+                        SizedBox(height: 3.h),
                         Text(formattedDateMonthAndYear,
                             style: context.textTheme.bodySmall),
                       ],
@@ -58,11 +61,13 @@ class SuccessBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'min: ${weatherModel!.minTemp}',
                           style: context.textTheme.bodyMedium,
                         ),
+                        SizedBox(height: 3.h),
                         Text(
                           'max: ${weatherModel!.maxTemp}',
                           style: context.textTheme.bodyMedium,
@@ -75,17 +80,31 @@ class SuccessBody extends StatelessWidget {
                         Text(
                           '${weatherModel!.temp}',
                           style: context.textTheme.bodyLarge!
-                              .copyWith(fontSize: 32.spMin),
+                              .copyWith(fontSize: 38.spMin),
                         ),
                         Text(' °C', style: context.textTheme.bodyMedium),
                       ],
                     ),
                   ],
                 ),
-                Text(weatherModel!.weatherCondition,
-                    style: context.textTheme.bodyLarge,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis),
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  direction: Axis.horizontal,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    Text(weatherModel!.weatherCondition,
+                        style: context.textTheme.bodyLarge!
+                            .copyWith(fontSize: 36.spMin),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis),
+                    Image.network(
+                      "https:${weatherModel!.image}",
+                      width: 80,
+                      height: 80,
+                      fit: BoxFit.fill,
+                    )
+                  ],
+                ),
               ],
             ),
           ),
@@ -93,7 +112,7 @@ class SuccessBody extends StatelessWidget {
           const CustomButton(
             title: "Find More Weather",
           ),
-          const Spacer(),
+          const Spacer(flex: 2),
         ],
       ),
     ));

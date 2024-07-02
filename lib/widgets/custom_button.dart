@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/constant/color.dart';
-import 'package:weather_app/helper/extentions.dart';
-import 'package:weather_app/logic/weather_cubit/weather_cubit.dart';
+import 'package:dark_sky/constant/color.dart';
+import 'package:dark_sky/helper/extentions.dart';
+import 'package:dark_sky/logic/weather_cubit/weather_cubit.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.title});

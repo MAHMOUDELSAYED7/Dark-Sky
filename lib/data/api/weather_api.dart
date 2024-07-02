@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:weather_app/constant/string.dart';
+import 'package:dark_sky/constant/string.dart';
 
 import '../model/weather_model.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:weather_app/constant/color.dart';
-import 'package:weather_app/helper/extentions.dart';
+import 'package:dark_sky/constant/color.dart';
+import 'package:dark_sky/helper/extentions.dart';
 import '../logic/weather_cubit/weather_cubit.dart';
 
 class CustomSearchBar extends StatefulWidget {

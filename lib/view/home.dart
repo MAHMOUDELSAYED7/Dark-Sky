@@ -1,11 +1,10 @@
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/helper/extentions.dart';
-import 'package:weather_app/widgets/failure_body.dart';
-import 'package:weather_app/widgets/intial_body.dart';
+import 'package:dark_sky/helper/extentions.dart';
+import 'package:dark_sky/widgets/failure_body.dart';
+import 'package:dark_sky/widgets/intial_body.dart';
 
 import '../logic/weather_cubit/weather_cubit.dart';
 import '../widgets/loading_body.dart';

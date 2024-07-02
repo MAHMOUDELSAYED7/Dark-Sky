@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:weather_app/constant/color.dart';
-import 'package:weather_app/helper/extentions.dart';
-import 'package:weather_app/widgets/custom_button.dart';
+import 'package:dark_sky/constant/color.dart';
+import 'package:dark_sky/helper/extentions.dart';
+import 'package:dark_sky/widgets/custom_button.dart';
 
 class FailureBody extends StatelessWidget {
   const FailureBody({super.key, this.message});

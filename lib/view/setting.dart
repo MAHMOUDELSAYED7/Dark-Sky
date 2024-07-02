@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:weather_app/constant/color.dart';
-import 'package:weather_app/helper/extentions.dart';
+import 'package:dark_sky/constant/color.dart';
+import 'package:dark_sky/helper/extentions.dart';
 
 import '../logic/theme_cubit/themecubit_cubit.dart';
 
