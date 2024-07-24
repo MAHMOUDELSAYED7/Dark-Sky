@@ -75,7 +75,7 @@ abstract class AppTheme {
           borderSide:
               const BorderSide(width: 3, color: LightModeColor.primaryColor),
         ),
-        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
+        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 20),
       ),
     );
   }
