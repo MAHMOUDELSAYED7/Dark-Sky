@@ -1,6 +1,5 @@
 # Dark Sky
 
-## Overview
 Dark Sky is a modern, user-friendly weather app built with Flutter. It provides users with accurate weather information for any location worldwide. The app's standout feature is its robust search functionality, which allows users to find weather updates for any place effortlessly. Dark Sky also includes a sleek dark mode, ensuring a comfortable viewing experience, especially in low-light environments.
 
 ## Features
